@@ -45,7 +45,7 @@ module Travis
     end
 
     def update_version
-      Travis::Assets::Version.new.update
+      Travis::Assets::Version.new(roots).update
     end
 
     TYPES.each { |type| define_method(type) { paths[type] } }
